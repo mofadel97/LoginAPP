@@ -13,9 +13,6 @@ class loginApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
-      // routes: {
-      //   "SplashScreen": (context) => SplashScreen(),
-      // });
     );
   }
 }

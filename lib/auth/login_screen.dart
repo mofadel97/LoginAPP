@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/Customs/Costuombutom.dart';
 import 'package:login_app/Customs/custom_textformfield.dart';
+import 'package:login_app/utils/Component.dart';
 import 'package:login_app/utils/assets_manager.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -49,14 +50,6 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Email",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
                 SizedBox(
                   height: 20,
                 ),
@@ -96,18 +89,82 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  "  ـــــــــــــــــــــــــــــــــــــ   Or login with    ـــــــــــــــــــــــــــــــــــ",
-                  style: TextStyle(
-                    color: Colors.grey,
-                  ),
-                ),
-                // Container(
-                //     child: Positioned(
-                //   width: 70,
-                //   height: 70,
-                //   child: Image.asset("Icon.png"),
-                // ))
+                //
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // النص مع الخطوط الجانبية
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Divider(
+                            color: Colors.white70,
+                            thickness: 1,
+                            indent: 10,
+                            endIndent: 10,
+                          ),
+                        ),
+                        const Text(
+                          "Or login with",
+                          style: TextStyle(
+                            color: Colors.white70,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Expanded(
+                          child: Divider(
+                            color: Colors.white70,
+                            thickness: 1,
+                            indent: 10,
+                            endIndent: 10,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                    // الأزرار الثلاثة
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey[800], // لون الخلفية
+                            borderRadius:
+                                BorderRadius.circular(10), // الحواف مستديرة
+                          ),
+                          child: Image.asset(
+                            'assets/7123025_logo_google_g_icon.png',
+                            width: 60,
+                            height: 60,
+                          ),
+                        ),
+                        const SizedBox(width: 20),
+                        SocialButton(icon: Icons.apple), // زر Apple
+                        const SizedBox(width: 20),
+                        SocialButton(icon: Icons.facebook), // زر Facebook
+                      ],
+                    ),
+                    const SizedBox(height: 70),
+                    // النص السفلي لتسجيل حساب
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Don't have an account?",
+                          style: TextStyle(color: Colors.white70, fontSize: 16),
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            "Signup",
+                            style: TextStyle(
+                                color: Colors.greenAccent, fontSize: 16),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                )
               ],
             ),
           ),

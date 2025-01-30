@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_app/auth/signup_screen.dart';
 
 class CostumeBottons extends StatefulWidget {
   final String titale; // نص الزر
@@ -54,7 +55,12 @@ class _CostumeBottonsState extends State<CostumeBottons>
     return GestureDetector(
       onTapDown: _onTapDown,
       onTapUp: _onTapUp,
-      onTap: widget.onPressed,
+      onTap: widget.onPressed??(){
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SingUp()),
+        );
+      },
       child: ScaleTransition(
         scale: _scaleAnimation,
         child: Container(
